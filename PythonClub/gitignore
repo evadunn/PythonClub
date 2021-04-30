@@ -1,1 +1,7 @@
-
+[settings]
+SECRET_KEY : SECRET_KEY
+DB_NAME : pythonclubdb
+DB_USER : pythonclubrole
+DB_PASSWORD : p@ssw0rd1
+DB_HOST : localhost
+DB_PORT : 5432
