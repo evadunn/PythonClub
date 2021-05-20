@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Event</h2>
+<ul>
+    {% for e in Event_list %}
+       <li>{{ e.Eventname }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
