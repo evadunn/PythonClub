@@ -9,6 +9,13 @@ class Meeting(models.Model):
     meetinglocation=models.CharField(max_length=255, null=True, blank=True)
     meetingagenda=models.TextField()
 
+    def percentfilled(self):
+        self.percentfilled=self.meetinglocation
+        return self.meetinglocation
+
+    def totalattendees(self):
+        self.totalattendees=self.meetinglocation -self.percentfilled
+
     def __str__(self):
         return self.meetingtitle
 
@@ -21,7 +28,7 @@ class Meetingminutes(models.Model):
     minutestext=models.TextField()
 
     def __str__(self):
-        return self.meetingminutesid
+        return self.meetingminutes
 
     class Meta:
         db_table='Meetingminutes'
@@ -46,7 +53,7 @@ class Event(models.Model):
     eventtime=models.CharField(max_length=255)
     eventdescription=models.TextField()
     userid=models.ForeignKey(User, on_delete=models.CASCADE)
-
+       
     def __str__(self):
         return self.eventtitle
 
